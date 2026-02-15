@@ -1,6 +1,8 @@
-# Typing Practice Web Application
+# Typing for Literary Speedrunners
 
-A simple, clean typing practice application built with vanilla HTML, CSS (Tailwind), and JavaScript.
+A simple interface for practicing typing. Comes with Bible verses and literary passages so my kids have good things to meditate on while learning to type.
+
+Added bonus: an auto start/stop timer for a little competition.
 
 ## Features
 
@@ -42,13 +44,3 @@ Edit `passages.json` and add new objects with this format:
 ```
 
 The dropdown will automatically update with your new passages.
-
-## Technology Stack
-
-- HTML5
-- Tailwind CSS (via CDN)
-- Vanilla JavaScript (ES6+)
-
-## License
-
-Free to use and modify.

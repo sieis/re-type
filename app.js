@@ -1,4 +1,3 @@
-// This version is for EXACT MATCHING ONLY
 // State variables
 let passages = [];
 let currentPassage = null;
