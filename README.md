@@ -4,6 +4,12 @@ A simple interface for practicing typing. Comes with Bible verses and literary p
 
 Added bonus: an auto start/stop timer for a little competition.
 
+## Live Site
+
+Deployed on Netlify:
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/81e36560-621c-48c7-9b11-b512328a520a/deploy-status)](https://app.netlify.com/projects/re-type/deploys)
+
 ## Features
 
 - **Multiple Passages**: Select from various typing passages via dropdown menu
