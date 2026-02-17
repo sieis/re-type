@@ -4,6 +4,11 @@ let currentPassage = null;
 let timerInterval = null;
 let startTime = null;
 let isTyping = false;
+// --- Session timer state ---
+let sessionTimerStarted = false;
+let sessionStartMs = null;
+let sessionInterval = null;
+
 
 // DOM elements
 const passageSelector = document.getElementById('passageSelector');
@@ -76,6 +81,37 @@ function startTimer() {
     }, 100);
 }
 
+// --- Start session timer (runs until page refresh), aligned to real seconds ---
+function startSessionTimer() {
+  if (sessionTimerStarted) return;
+
+  sessionTimerStarted = true;
+  sessionStartMs = Date.now();
+
+  const sessionDisplay = document.getElementById('sessionTimerValue');
+  if (!sessionDisplay) return;
+
+  const update = () => {
+    const elapsedMs = Date.now() - sessionStartMs;
+    const elapsedSec = Math.floor(elapsedMs / 1000);
+
+    const minutes = Math.floor(elapsedSec / 60);
+    const seconds = elapsedSec % 60;
+
+    sessionDisplay.textContent =
+      String(minutes).padStart(2, '0') + ':' +
+      String(seconds).padStart(2, '0');
+
+    // Schedule next update exactly at the next second boundary
+    const msToNextSecond = 1000 - (elapsedMs % 1000);
+    sessionInterval = setTimeout(update, msToNextSecond);
+  };
+
+  update();
+}
+
+
+
 // Stop timer and calculate WPM
 function stopTimer() {
     clearInterval(timerInterval);
@@ -91,11 +127,13 @@ function updateHighlighting() {
     const typed = userInput.value;
     const reference = currentPassage.passage;
 
-    // Start timer on first keystroke
+    // Start timers on first keystroke
     if (!isTyping && typed.length > 0) {
         isTyping = true;
         startTimer();
+        startSessionTimer(); // <-- ADD THIS LINE
     }
+
 
 
 

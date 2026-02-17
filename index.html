@@ -8,8 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+    <span>One verse every week. All of 2026. Sign up for the newsletter below.</span>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+    <div class="logo-mark">Re-Type</div>
+    <h1>Memorizing scripture doesn't have to be hard</h1>
+    <p class="subheading">It just takes practice. Daily.</p>
+    <p class="subheading-detail">I built this for me and my son to practice typing our verses as we memorize them all year long.</p>
+    <p class="proof-line">
+        <a target="_blank" href="https://progressandperfection.com/subscribe">Sign up to the free newsletter here.</a>
+    </p>
+    </section>
+
     <div class="container">
-        <h1>Re-Type</h1>
+        <!-- <h1>Re-Type</h1> -->
         
         <!-- Passage Selector -->
         <div class="selector-container">
@@ -21,7 +37,7 @@
 
         <!-- Reference Text Display -->
         <div class="box">
-            <h2>Reference Text:</h2>
+            <h2 class="section-title">Reference Text:</h2>
             <div id="referenceText">
                 <!-- Reference text populated here -->
             </div>
@@ -30,7 +46,12 @@
         <!-- Timer and Stats -->
         <div class="stats-container">
             <div class="stat">
-                <p class="stat-label">Time</p>
+                <div class="stat-label">Session</div>
+                <div class="stat-value timer-value" id="sessionTimerValue">00:00</div>
+            </div>
+
+            <div class="stat">
+                <p class="stat-label">Passage</p>
                 <p id="timer" class="stat-value timer-value">0.0s</p>
             </div>
             <div class="stat">
@@ -41,7 +62,7 @@
 
         <!-- User Input Area -->
         <div class="box">
-            <h2>Type Here:</h2>
+            <h2 class="section-title">Type Here:</h2>
             <textarea 
                 id="userInput" 
                 tabindex="1"
