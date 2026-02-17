@@ -225,6 +225,7 @@ h2 {
   line-height: 1.05;
 }
 
+
 .timer-value {
   color: var(--accent);
 }
@@ -268,7 +269,7 @@ h2 {
   display: flex;
   gap: 12px;
   justify-content: center;
-  margin-top: 12px;
+  margin: 24px;
   flex-wrap: wrap;
 }
 
