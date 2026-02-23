@@ -76,7 +76,7 @@ function resetTypingSession() {
     timerDisplay.textContent = '0.0s';
     wpmDisplay.textContent = '0';
     displayReferenceText();
-    userInput.focus();
+    // userInput.focus();
 }
 
 // Start timer
