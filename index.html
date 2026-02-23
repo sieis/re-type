@@ -35,6 +35,16 @@
             </select>
         </div>
 
+        <!-- Font Size Controls -->
+        <div class="selector-container">
+            <label>Font Size:</label>
+        </div>
+        <div class="font-size-controls">
+            <button id="decreaseFont" aria-label="Decrease font size">−</button>
+            <span id="fontSizeDisplay">100%</span>
+            <button id="increaseFont" aria-label="Increase font size">+</button>
+        </div>
+
         <!-- Reference Text Display -->
         <div class="box">
             <h2 class="section-title">Reference Text:</h2>
@@ -48,6 +58,11 @@
             <div class="stat">
                 <div class="stat-label">Session</div>
                 <div class="stat-value timer-value" id="sessionTimerValue">00:00</div>
+                <div class="session-controls">
+                    <button id="startSessionBtn" class="session-btn">Start</button>
+                    <button id="pauseSessionBtn" class="session-btn" disabled>Pause</button>
+                    <button id="resetSessionBtn" class="session-btn">Reset</button>
+                </div>
             </div>
 
             <div class="stat">

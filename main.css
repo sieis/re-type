@@ -68,6 +68,51 @@ h2 {
   margin-bottom: 18px;
 }
 
+.font-size-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.font-size-controls button {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+  box-shadow: var(--shadow-soft);
+  min-width: 44px;
+}
+
+.font-size-controls button:hover {
+  background: var(--surface-hover);
+  border-color: rgba(108, 92, 231, 0.25);
+  transform: translateY(-1px);
+}
+
+.font-size-controls button:active {
+  transform: translateY(0px);
+}
+
+.font-size-controls button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--accent-glow), var(--shadow-soft);
+  border-color: rgba(108, 92, 231, 0.55);
+}
+
+#fontSizeDisplay {
+  font-size: 13px;
+  color: var(--text-secondary);
+  min-width: 50px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
 .selector-container label {
   display: block;
   color: var(--text-secondary);
@@ -225,6 +270,48 @@ h2 {
   line-height: 1.05;
 }
 
+.session-controls {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.session-btn {
+  padding: 6px 10px;
+  font-size: 11px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+  box-shadow: var(--shadow-soft);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.session-btn:hover:not(:disabled) {
+  background: var(--surface-hover);
+  border-color: rgba(108, 92, 231, 0.25);
+  transform: translateY(-1px);
+}
+
+.session-btn:active:not(:disabled) {
+  transform: translateY(0px);
+}
+
+.session-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.session-btn:focus:not(:disabled) {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-glow), var(--shadow-soft);
+  border-color: rgba(108, 92, 231, 0.55);
+}
 
 .timer-value {
   color: var(--accent);
