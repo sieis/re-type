@@ -286,11 +286,13 @@ h2 {
   display: flex;
   justify-content: center;
   gap: 28px;
+  flex-wrap: wrap;
 }
 
 .stat {
   text-align: center;
-  min-width: 140px;
+  min-width: 100px;
+  flex: 1 1 auto;
 }
 
 .stat-label {
@@ -305,6 +307,9 @@ h2 {
   font-size: 34px;
   font-weight: 700;
   line-height: 1.05;
+  overflow: hidden;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 .session-controls {
@@ -478,7 +483,9 @@ h2 {
 /* Responsive tweaks */
 @media (max-width: 640px) {
   body { padding-top: 44px; }
-  .stat { min-width: 120px; }
-  .stat-value { font-size: 30px; }
+  .stats-container { gap: 12px; }
+  .stat { min-width: 0; flex: 1 1 calc(50% - 6px); }
+  .stat-value { font-size: 24px; }
+  .session-btn { flex: 1 1 calc(33% - 4px); min-width: 0; }
   .navigation-buttons button { min-width: 0; width: 100%; max-width: 520px; }
 }
