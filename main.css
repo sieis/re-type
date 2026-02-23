@@ -113,6 +113,43 @@ h2 {
   letter-spacing: 0.02em;
 }
 
+/* Hard Mode Toggle */
+.hard-mode-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.hard-mode-btn {
+  padding: 10px 16px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+  box-shadow: var(--shadow-soft);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.hard-mode-btn:hover {
+  background: var(--surface-hover);
+  border-color: rgba(108, 92, 231, 0.25);
+  transform: translateY(-1px);
+}
+
+.hard-mode-btn:active {
+  transform: translateY(0px);
+}
+
+.hard-mode-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--accent-glow), var(--shadow-soft);
+  border-color: rgba(108, 92, 231, 0.55);
+}
+
 .selector-container label {
   display: block;
   color: var(--text-secondary);

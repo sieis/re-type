@@ -15,6 +15,8 @@ let fontSizeMultiplier = 1;
 const MIN_MULTIPLIER = 0.8;
 const MAX_MULTIPLIER = 1.5;
 const MULTIPLIER_STEP = 0.1;
+// --- Hard mode state ---
+let hardModeEnabled = false;
 
 
 // DOM elements
@@ -76,6 +78,10 @@ function resetTypingSession() {
     timerDisplay.textContent = '0.0s';
     wpmDisplay.textContent = '0';
     displayReferenceText();
+    // Show reference text only if hard mode is off
+    if (!hardModeEnabled) {
+        referenceText.style.display = 'block';
+    }
     // userInput.focus();
 }
 
@@ -347,9 +353,44 @@ function decreaseFontSize() {
     }
 }
 
+function toggleHardMode() {
+    hardModeEnabled = !hardModeEnabled;
+    localStorage.setItem('hardModeEnabled', hardModeEnabled);
+    updateHardModeDisplay();
+    
+    // Immediately hide or show reference text based on hard mode state
+    if (hardModeEnabled) {
+        referenceText.style.display = 'none';
+    } else {
+        referenceText.style.display = 'block';
+    }
+}
+
+function updateHardModeDisplay() {
+    const toggle = document.getElementById('hardModeToggle');
+    if (toggle) {
+        toggle.textContent = hardModeEnabled ? 'Hard Mode: ON' : 'Hard Mode: OFF';
+        toggle.style.backgroundColor = hardModeEnabled ? 'rgba(108, 92, 231, 0.3)' : '';
+    }
+}
+
+function loadHardMode() {
+    const saved = localStorage.getItem('hardModeEnabled');
+    hardModeEnabled = saved === 'true';
+    updateHardModeDisplay();
+    
+    // Apply display state based on hard mode
+    if (hardModeEnabled) {
+        referenceText.style.display = 'none';
+    } else {
+        referenceText.style.display = 'block';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('increaseFont').addEventListener('click', increaseFontSize);
     document.getElementById('decreaseFont').addEventListener('click', decreaseFontSize);
+    document.getElementById('hardModeToggle').addEventListener('click', toggleHardMode);
     
     // Session timer controls
     document.getElementById('startSessionBtn').addEventListener('click', startSessionTimer);
@@ -362,3 +403,4 @@ document.addEventListener('DOMContentLoaded', () => {
 // Initialize app
 loadPassages();
 loadFontSize();
+loadHardMode();
