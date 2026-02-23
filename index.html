@@ -30,7 +30,7 @@
 <body>
     <!-- TOP BAR -->
     <div class="top-bar">
-    <span>One verse every week. All of 2026. Sign up for the newsletter below.</span>
+    <span>One verse every week. All of 2026. Sign up for the <a target="_blank" href="https://progressandperfection.com/subscribe">newsletter here</a>.</span>
     </div>
 
     <!-- HERO -->
@@ -39,45 +39,15 @@
     <h1>Memorizing scripture doesn't have to be hard</h1>
     <p class="subheading">It just takes practice. Daily.</p>
     <p class="subheading-detail">I built this for me and my son to practice typing our verses as we memorize them all year long.</p>
-    <p class="proof-line">
-        <a target="_blank" href="https://progressandperfection.com/subscribe">Sign up to the free newsletter here.</a>
-    </p>
     </section>
 
     <div class="container">
         <!-- <h1>Re-Type</h1> -->
-        
-        <!-- Passage Selector -->
-        <div class="selector-container">
-            <label>Select Passage:</label>
-            <select id="passageSelector">
-                <!-- Options populated by JavaScript -->
-            </select>
-        </div>
-
-        <!-- Font Size Controls -->
-        <div class="selector-container">
-            <label>Font Size:</label>
-        </div>
-        <div class="font-size-controls">
-            <button id="decreaseFont" aria-label="Decrease font size">−</button>
-            <span id="fontSizeDisplay">100%</span>
-            <button id="increaseFont" aria-label="Increase font size">+</button>
-        </div>
-
         <!-- Hard Mode Toggle -->
         <div class="hard-mode-container">
             <button id="hardModeToggle" class="hard-mode-btn">Hard Mode: OFF</button>
         </div>
-
-        <!-- Reference Text Display -->
-        <div class="box">
-            <h2 class="section-title">Reference Text:</h2>
-            <div id="referenceText">
-                <!-- Reference text populated here -->
-            </div>
-        </div>
-
+        
         <!-- Timer and Stats -->
         <div class="stats-container">
             <div class="stat">
@@ -98,7 +68,33 @@
                 <p class="stat-label">Words Per Minute</p>
                 <p id="wpm" class="stat-value wpm-value">0</p>
             </div>
+            <div class="stat">
+                <div class="stat-label">Font Size</div>
+                <div class="font-size-controls">
+                    <button id="decreaseFont" aria-label="Decrease font size">−</button>
+                    <span id="fontSizeDisplay">100%</span>
+                    <button id="increaseFont" aria-label="Increase font size">+</button>
+                </div>
+            </div>
         </div>
+        <!-- Passage Selector -->
+        <div class="box">
+            <div class="section-title">
+                <label>Select Passage:</label>
+                <select id="passageSelector">
+                    <!-- Options populated by JavaScript -->
+                </select>
+            </div>
+        </div>
+
+        <!-- Reference Text Display -->
+        <div class="box">
+            <h2 class="section-title">Reference Text:</h2>
+            <div id="referenceText">
+                <!-- Reference text populated here -->
+            </div>
+        </div>
+
 
         
 

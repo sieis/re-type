@@ -370,7 +370,11 @@ function updateHardModeDisplay() {
     const toggle = document.getElementById('hardModeToggle');
     if (toggle) {
         toggle.textContent = hardModeEnabled ? 'Hard Mode: ON' : 'Hard Mode: OFF';
-        toggle.style.backgroundColor = hardModeEnabled ? 'rgba(108, 92, 231, 0.3)' : '';
+        if (hardModeEnabled) {
+            toggle.classList.add('hard-mode-active');
+        } else {
+            toggle.classList.remove('hard-mode-active');
+        }
     }
 }
 
